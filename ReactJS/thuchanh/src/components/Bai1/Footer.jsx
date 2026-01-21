@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p>© 2026 Sinh viên React</p>
+      <p>© 2026 Sinh viên IUH</p>
     </footer>
   );
 }
