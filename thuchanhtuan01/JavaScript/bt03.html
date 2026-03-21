@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitap03</title>
+</head>
+<body>
+
+    <input id="Dolphin01" type="text" placeholder="diem01">
+    <input id="Dolphin02" type="text" placeholder="diem02">
+    <input id="Dolphin03" type="text" placeholder="diem03">
+    
+    <input id="Koala01" type="text" placeholder="diem01">
+    <input id="Koala02" type="text" placeholder="diem02">
+    <input id="Koala03" type="text" placeholder="diem03">
+
+    <button id="click">Click</button>
+
+    <script>
+        var button = document.getElementById("click");
+
+        button.onclick = () => {
+            
+            var Dolphin01 = Number(document.getElementById("Dolphin01").value);
+            var Dolphin02 = Number(document.getElementById("Dolphin02").value);
+            var Dolphin03 = Number(document.getElementById("Dolphin03").value);
+
+            var Koala01 = Number(document.getElementById("Koala01").value);
+            var Koala02 = Number(document.getElementById("Koala02").value);
+            var Koala03 = Number(document.getElementById("Koala03").value);
+
+            var avedolphin = (Dolphin01 + Dolphin02 + Dolphin03)/3;
+            var avekoala = (Koala01 + Koala02 + Koala03)/3;
+
+            console.log(avedolphin.toFixed(2), avekoala.toFixed(2));
+
+        if (avedolphin > avekoala && avedolphin >= 100) {
+            console.log("Dolphins win!");
+        } 
+        else if (avekoala > avedolphin && avekoala >= 100) {
+            console.log("Koalas win!");
+        } 
+        else if (avedolphin === avekoala && avedolphin >= 100 && avekoala >= 100) {
+            console.log("It's a draw!");
+        } 
+        else {
+            console.log("No team wins the trophy!");
+        }
+        };
+    </script>
+
+</body>
+</html>

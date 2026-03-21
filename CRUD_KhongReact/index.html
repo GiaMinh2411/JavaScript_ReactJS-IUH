@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Working API - JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* ===== BUTTON GROUP ===== */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .api-btn {
+            padding: 10px 18px;
+            border: 1px solid #0d6efd;
+            background: white;
+            color: #0d6efd;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+
+        .api-btn:hover {
+            background: #e7f1ff;
+        }
+
+        /* ===== ACTIVE BUTTON ===== */
+        .api-btn.active {
+            background: #0d6efd;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(13,110,253,0.4);
+            transform: scale(1.05);
+        }
+
+        /* ===== TODO AREA ===== */
+        .todo-box {
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 8px;
+            width: 220px;
+        }
+
+        ul {
+            margin-top: 15px;
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        li button {
+            margin-left: 10px;
+            padding: 4px 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Working API (JavaScript thuần)</h2>
+
+    <div class="btn-group">
+        <button class="api-btn" onclick="fetchWithThen(this)">
+            Fetch (then)
+        </button>
+
+        <button class="api-btn" onclick="fetchWithAsync(this)">
+            Fetch (async/await)
+        </button>
+
+        <button class="api-btn" onclick="fetchWithAxios(this)">
+            Axios
+        </button>
+    </div>
+
+    <hr>
+
+    <div class="todo-box">
+        <input id="todoInput" placeholder="Nhập nội dung todo">
+        <button onclick="createTodo()">Create</button>
+    </div>
+
+    <h3>Todo List</h3>
+    <ul id="todoList"></ul>
+
+    <script src="main.js"></script>
+</body>
+</html>

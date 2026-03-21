@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Challenge 3</title>
+</head>
+<body>
+
+    <h3>Mark</h3>
+    <input id="markMass" placeholder="Cân nặng (kg)">
+    <input id="markHeight" placeholder="Chiều cao (m)">
+
+    <h3>John</h3>
+    <input id="johnMass" placeholder="Cân nặng (kg)">
+    <input id="johnHeight" placeholder="Chiều cao (m)">
+
+    <br><br>
+    <button id="btn">So sánh BMI</button>
+
+    <script>
+        document.getElementById("btn").onclick = function () {
+
+            const mark = {
+                fullName: "Mark Miller",
+                mass: Number(markMass.value),
+                height: Number(markHeight.value),
+                calcBMI: function () {
+                    this.bmi = this.mass / (this.height * this.height);
+                    return this.bmi;
+                }
+            };
+
+            const john = {
+                fullName: "John Smith",
+                mass: Number(johnMass.value),
+                height: Number(johnHeight.value),
+                calcBMI: function () {
+                    this.bmi = this.mass / (this.height * this.height);
+                    return this.bmi;
+                }
+            };
+
+            mark.calcBMI();
+            john.calcBMI();
+
+            if (mark.bmi > john.bmi) {
+                console.log(`${mark.fullName}'s BMI (${mark.bmi.toFixed(1)}) is higher than ${john.fullName}'s (${john.bmi.toFixed(1)})`);
+            } else {
+                console.log(`${john.fullName}'s BMI (${john.bmi.toFixed(1)}) is higher than ${mark.fullName}'s (${mark.bmi.toFixed(1)})`);
+            }
+        };
+    </script>
+
+</body>
+</html>

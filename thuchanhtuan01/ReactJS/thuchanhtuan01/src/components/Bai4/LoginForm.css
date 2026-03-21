@@ -1,0 +1,15 @@
+.login {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input:focus {
+  border-color: blue;
+}
+
+button {
+  width: 100%;
+}

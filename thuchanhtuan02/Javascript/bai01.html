@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Challenge 1</title>
+</head>
+<body>
+
+    <h3>Dolphins</h3>
+    <input id="d1" placeholder="Điểm 1">
+    <input id="d2" placeholder="Điểm 2">
+    <input id="d3" placeholder="Điểm 3">
+
+    <h3>Koalas</h3>
+    <input id="k1" placeholder="Điểm 1">
+    <input id="k2" placeholder="Điểm 2">
+    <input id="k3" placeholder="Điểm 3">
+
+    <br><br>
+    <button id="btn">Tính kết quả</button>
+
+    <script>
+        const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+        function checkWinner(avgD, avgK) {
+            if (avgD >= 2 * avgK) {
+                console.log(`Dolphins win (${avgD.toFixed(2)} vs ${avgK.toFixed(2)})`);
+            } else if (avgK >= 2 * avgD) {
+                console.log(`Koalas win (${avgK.toFixed(2)} vs ${avgD.toFixed(2)})`);
+            } else {
+                console.log("No team wins!");
+            }
+        }
+
+        document.getElementById("btn").onclick = function () {
+            const avgD = calcAverage(
+                Number(d1.value),
+                Number(d2.value),
+                Number(d3.value)
+            );
+
+            const avgK = calcAverage(
+                Number(k1.value),
+                Number(k2.value),
+                Number(k3.value)
+            );
+
+            checkWinner(avgD, avgK);
+        };
+    </script>
+
+</body>
+</html>

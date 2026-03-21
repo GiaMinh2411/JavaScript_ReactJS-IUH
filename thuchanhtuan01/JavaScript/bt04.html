@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitap04</title>
+</head>
+<body>
+
+    <input id="HoaDon" type="text" placeholder="Tiền hóa đơn">
+    <button id="click">Click</button>
+
+    <script>
+        var button = document.getElementById("click");
+
+        button.onclick = function () {
+            var HoaDon = Number(document.getElementById("HoaDon").value);
+            var tienbo = 0;
+
+            if (HoaDon <= 300) {
+                tienbo = HoaDon * 0.15;
+            } else {
+                tienbo = HoaDon * 0.20;
+            }
+
+            console.log("Hóa đơn:", HoaDon.toFixed(2));
+            console.log("Tiền boa:", tienbo.toFixed(2));
+        };
+    </script>
+
+</body>
+</html>

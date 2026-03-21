@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baitap02</title>
+</head>
+<body>
+
+    <input id="markMass" type="text" placeholder="Mark mass (kg)">
+    <input id="markHeight" type="text" placeholder="Mark height (m)">
+    
+    <input id="johnMass" type="text" placeholder="John mass (kg)">
+    <input id="johnHeight" type="text" placeholder="John height (m)">
+
+    <button id="click">Click</button>
+
+    <script>
+        var button = document.getElementById("click");
+
+        button.onclick = () => {
+            
+            var markMass = Number(document.getElementById("markMass").value);
+            var markHeight = Number(document.getElementById("markHeight").value);
+
+            var johnMass = Number(document.getElementById("johnMass").value);
+            var johnHeight = Number(document.getElementById("johnHeight").value);
+
+            
+            var markBMI = markMass / (markHeight * markHeight);
+            var johnBMI = johnMass / (johnHeight * johnHeight);
+
+            
+            if (markBMI > johnBMI) {
+                console.log(`${markBMI.toFixed(2)} is higher than John's ${johnBMI.toFixed(2)}`);
+            } else {
+                console.log(`${johnBMI.toFixed(2)} is higher than Mark's ${markBMI.toFixed(2)}`);
+            }
+        };
+    </script>
+
+</body>
+</html>
